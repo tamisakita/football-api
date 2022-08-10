@@ -1,14 +1,15 @@
 package com.fiap.footballapi.controller;
 
 import com.fiap.footballapi.dto.TeamDto;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.fiap.footballapi.dto.TeamFilterDto;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/football")
@@ -32,10 +33,20 @@ public class TeamController {
         teamListDto.add(teamDto);
     }
 
-    //@PostMapping(/save-team)
-    @GetMapping("/teams")
-    public List<TeamDto> getTeamList() {
-        return teamListDto;
+    @GetMapping("/teams") //@RequestParams
+    public List<TeamDto> getTeamList(TeamFilterDto teamFilterDto) {
+        return teamListDto.stream()
+                .filter(teamDto -> teamDto.getName() == null || teamDto.getName().contains(teamFilterDto.getName()))
+                .collect(Collectors.toList()); //transformando em list de novo
+    }
+
+    @GetMapping("/teams/{id}")
+    public TeamDto getTeamById(@PathVariable Long id) {
+
+        return teamListDto.stream()
+                .filter(teamDto -> teamDto.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
 }
