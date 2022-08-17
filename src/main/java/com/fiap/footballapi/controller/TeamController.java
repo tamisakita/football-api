@@ -14,7 +14,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/football/teams")
+@RequestMapping("/teams")
 public class TeamController {
 
     private TeamService teamService;
