@@ -69,10 +69,7 @@ public class TeamServiceImpl implements TeamService {
     public TeamDto updateMembers(Long id, UpdateTeamMembersDto updateTeamMembersDto) {
         TeamEntity teamEntity = teamRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        teamEntity.setName(updateTeamMembersDto.getName());
         teamEntity.setMembers(updateTeamMembersDto.getMembers());
-        teamEntity.setFoundationDate(updateTeamMembersDto.getFoundationDate());
-
         TeamEntity savedEntity = teamRepository.save(teamEntity);
         return new TeamDto(savedEntity);
     }
