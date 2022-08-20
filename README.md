@@ -1,6 +1,5 @@
 # football-api
 This is an api that registers football teams.
-Activity made for Spring class.
 
 ## main technologies
 * Java 18
