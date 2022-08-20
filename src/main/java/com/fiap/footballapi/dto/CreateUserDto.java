@@ -1,22 +1,8 @@
-package com.fiap.footballapi.entity;
+package com.fiap.footballapi.dto;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name= "TB_USER")
-public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class CreateUserDto {
     private String username;
     private String password;
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -33,7 +19,5 @@ public class UserEntity {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 
 }

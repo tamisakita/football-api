@@ -29,7 +29,7 @@ public class JwtUtil {
                 .setIssuedAt(createdDate)
                 .setExpiration(expirationDate)
                 .setSubject(username)
-                .setClaims(claims)
+          //      .setClaims(claims)
                 .signWith(SignatureAlgorithm.HS512, secret)
                 .compact();
     }
