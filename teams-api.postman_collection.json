@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "a5073615-098b-4a2f-aa4c-c38619e6d568",
+		"name": "teams-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "find teams",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/teams",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"teams"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save teams",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"foundationDate\": \"1960-08-20\",\r\n  \"members\": 200,\r\n  \"name\": \"Palmeiras\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/teams/save",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"teams",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update members",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"members\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/teams/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"teams",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
