@@ -6,7 +6,7 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
   datasource:
-    url: jdbc:h2:~/43scj-football;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:C:\43scj-football;DB_CLOSE_ON_EXIT=FALSE
     username: fiap
     password: fiap
   h2:
