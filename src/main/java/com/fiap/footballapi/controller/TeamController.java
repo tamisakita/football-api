@@ -33,7 +33,7 @@ public class TeamController {
         return teamService.getTeamById(id);
     }
 
-    @PostMapping("/create")
+    @PostMapping("/save")
     public TeamDto create(@RequestBody CreateUpdateTeamDto createUpdateTeamDto) {
         return teamService.create(createUpdateTeamDto);
     }

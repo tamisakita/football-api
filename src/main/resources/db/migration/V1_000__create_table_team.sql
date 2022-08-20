@@ -3,6 +3,6 @@ create table TB_TEAM(
     members integer,
     foundationDate date,
     name varchar(200),
-    created_date timestamp not null,
+--    created_date timestamp not null,
     last_modified_date timestamp
 )

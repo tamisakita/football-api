@@ -15,3 +15,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+
+jwt:
+  secret: f14ajdj646
+  expireMinutes: 5
