@@ -5,7 +5,6 @@ This is an api that registers football teams.
 * Java 18
 * Spring Data
 * Spring Security
-* Spring Batch
 * Gradle
 * Hibernate
 * Swagger UI
