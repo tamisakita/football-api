@@ -2,7 +2,7 @@
 This is an api that registers football teams.
 Activity made for Spring class.
 
-##main technologies
+## main technologies
 * Java 18
 * Spring Data
 * Spring Security
@@ -12,7 +12,7 @@ Activity made for Spring class.
 * Swagger UI
 * H2 DB
  
- ##links
+ ## links
  
 * http://localhost:8081/swagger-ui/index.html
 * http://localhost:8081/h2-console/
